@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff;
+}
+
+body {
+  width: 393px;
+  margin: 0 auto;
+  min-height: 852px;
+  background: #fff;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.game-content {
+  position: relative;
+  width: 393px;
+  height: 852px;
+}
+
+.game-content svg {
+  width: 393px;
+  height: 852px;
+  display: block;
+}
+
+.back-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: inline-block;
+  padding: 12px 20px;
+  color: #231f20;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#g7-svg {
+  touch-action: none;
+  user-select: none;
+}
+
+.g7-item {
+  cursor: grab;
+}
+
+.g7-item:active {
+  cursor: grabbing;
+}

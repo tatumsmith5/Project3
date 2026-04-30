@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff;
+  overflow-x: hidden;
+}
+
+body {
+  width: 393px;
+  margin: 0 auto;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.page-container {
+  width: 393px;
+}
+
+.page-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#panic-btn-group {
+  cursor: pointer;
+}
+
+#panic-btn-rect {
+  transition: fill 0.12s ease;
+}
+
+#panick-text {
+  transition: fill 0.12s ease;
+}
+
+#red-character {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
