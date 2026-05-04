@@ -17,15 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Place element at a random position within the SVG display area.
   // Sets --tx/--ty so the CSS transform translate moves it there.
   function setRandomPosition(el) {
+    const svgRect = document.getElementById('g5-svg').getBoundingClientRect();
     const bbox = el.getBBox();
-    const scale = 393 / 294.48;
+    const scale = svgRect.width / 294.48;
     const ew = bbox.width * scale;
     const eh = bbox.height * scale;
     const cx = (bbox.x + bbox.width / 2) * scale;
     const cy = (bbox.y + bbox.height / 2) * scale;
     const margin = 12;
-    const targetX = margin + ew / 2 + Math.random() * (393 - ew - margin * 2);
-    const targetY = margin + eh / 2 + Math.random() * (852 - eh - margin * 2);
+    const targetX = margin + ew / 2 + Math.random() * (svgRect.width - ew - margin * 2);
+    const targetY = margin + eh / 2 + Math.random() * (svgRect.height - eh - margin * 2);
     el.style.setProperty('--tx', `${targetX - cx}px`);
     el.style.setProperty('--ty', `${targetY - cy}px`);
   }

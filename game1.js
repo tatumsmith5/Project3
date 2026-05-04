@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   svg.addEventListener('pointerdown', e => {
+    if (e.target.closest('.nav-btn')) return;
     active = true;
     svg.setPointerCapture(e.pointerId);
     advance(toSVG(e));

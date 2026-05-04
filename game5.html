@@ -11,7 +11,6 @@
 </head>
 <body>
   <div class="game-content">
-    <a href="index.html" class="back-btn">← back</a>
     <svg id="g5-svg" viewBox="0 0 294.48 639.36" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <style>
@@ -144,8 +143,36 @@
         </g>
         <path class="g5-cls-12" d="M74.7,182.98c1.99,1.94,4.72,3.12,7.5,3.22s5.59-.86,7.72-2.65c.82-.69,1.55-1.51,2-2.49"/>
       </g>
+      <!-- ── NAV BUTTONS ── -->
+      <a href="index.html" class="nav-btn">
+        <circle class="nav-circle" cx="16.96" cy="20.9" r="16"/>
+        <circle class="nav-stroke" cx="16.96" cy="20.9" r="11.18"/>
+        <polyline class="nav-stroke" points="9.71 23.07 16.66 13.85 24.21 23.07"/>
+        <line class="nav-stroke" x1="13.78" y1="22.25" x2="13.78" y2="27.3"/>
+        <line class="nav-stroke" x1="20.14" y1="22.25" x2="20.14" y2="27.3"/>
+      </a>
+      <a class="nav-btn" href="" id="nav-refresh">
+        <circle class="nav-circle" cx="272.51" cy="20.9" r="16"/>
+        <circle class="nav-stroke" cx="272.51" cy="20.9" r="11.18"/>
+        <line class="nav-icon" x1="264.39" y1="21.59" x2="274.26" y2="21.59"/>
+        <polyline class="nav-icon" points="274.67 15.41 280.63 21.37 275.61 26.38"/>
+      </a>
     </svg>
   </div>
   <script src="game5.js"></script>
+  <script>
+  (function() {
+    var btn = document.getElementById('nav-refresh');
+    if (!btn) return;
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var all = [1,2,3,4,5,6,7];
+      var m = location.pathname.match(/game(\d+)/);
+      var cur = m ? parseInt(m[1]) : 0;
+      var choices = all.filter(function(n) { return n !== cur; });
+      location.href = 'game' + choices[Math.floor(Math.random() * choices.length)] + '.html';
+    });
+  })();
+  </script>
 </body>
 </html>

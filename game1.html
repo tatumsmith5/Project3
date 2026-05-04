@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=393">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Game 1</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="apple-touch-icon" href="appicon.png">
@@ -11,7 +11,6 @@
 </head>
 <body>
   <div class="game-content">
-  <a class="back-btn" href="index.html">← Back</a>
     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 294.48 639.36">
   <defs>
     <style>
@@ -105,8 +104,36 @@
       <path class="g1-cls-3" d="M279.66,67.12c-3.39,5.19-8.75,9.05-14.74,10.62-5.99,1.57-12.56.83-18.05-2.03-2.12-1.1-4.11-2.54-5.55-4.44"/>
     </g>
   </g>
+      <!-- ── NAV BUTTONS ── -->
+      <a href="index.html" class="nav-btn">
+        <circle class="nav-circle" cx="16.96" cy="20.9" r="16"/>
+        <circle class="nav-stroke" cx="16.96" cy="20.9" r="11.18"/>
+        <polyline class="nav-stroke" points="9.71 23.07 16.66 13.85 24.21 23.07"/>
+        <line class="nav-stroke" x1="13.78" y1="22.25" x2="13.78" y2="27.3"/>
+        <line class="nav-stroke" x1="20.14" y1="22.25" x2="20.14" y2="27.3"/>
+      </a>
+      <a class="nav-btn" href="" id="nav-refresh">
+        <circle class="nav-circle" cx="272.51" cy="20.9" r="16"/>
+        <circle class="nav-stroke" cx="272.51" cy="20.9" r="11.18"/>
+        <line class="nav-icon" x1="264.39" y1="21.59" x2="274.26" y2="21.59"/>
+        <polyline class="nav-icon" points="274.67 15.41 280.63 21.37 275.61 26.38"/>
+      </a>
 </svg>
   </div>
   <script src="game1.js" defer></script>
+  <script>
+  (function() {
+    var btn = document.getElementById('nav-refresh');
+    if (!btn) return;
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var all = [1,2,3,4,5,6,7];
+      var m = location.pathname.match(/game(\d+)/);
+      var cur = m ? parseInt(m[1]) : 0;
+      var choices = all.filter(function(n) { return n !== cur; });
+      location.href = 'game' + choices[Math.floor(Math.random() * choices.length)] + '.html';
+    });
+  })();
+  </script>
 </body>
 </html>

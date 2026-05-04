@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   group.addEventListener('click', navigate);
 
   function navigate() {
-    const n = Math.floor(Math.random() * 5) + 1;
+    const n = Math.floor(Math.random() * 7) + 1;
     window.location.href = `game${n}.html`;
   }
 });
