@@ -10,20 +10,37 @@ html {
 }
 
 body {
-  width: 393px;
+  width: 100%;
+  max-width: 430px;
   margin: 0 auto;
   background: #fff;
   overflow-x: hidden;
 }
 
 .page-container {
-  width: 393px;
+  width: 100%;
 }
 
 .page-container svg {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ── iPhone screen sizes ── */
+@media (max-width: 375px) {
+  /* iPhone SE (3rd gen), iPhone 13 mini */
+  body { max-width: 375px; }
+}
+
+@media (min-width: 376px) and (max-width: 393px) {
+  /* iPhone 14, iPhone 15, iPhone 15 Pro */
+  body { max-width: 393px; }
+}
+
+@media (min-width: 394px) and (max-width: 430px) {
+  /* iPhone 14 Plus, iPhone 15 Plus, iPhone 15 Pro Max */
+  body { max-width: 430px; }
 }
 
 #panic-btn-group {
